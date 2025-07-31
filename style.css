@@ -1,0 +1,84 @@
+/* Reset & basic styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #333;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Heading style */
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Game board */
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+/* Card styles */
+.card {
+  width: 100px;
+  height: 100px;
+  background: #1e1e1e;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  user-select: none;
+}
+
+.card:hover {
+  transform: scale(1.08);
+  background: #2d2d2d;
+}
+
+.card.flipped {
+  background: #00c853;
+  color: #fff;
+  transform: scale(1.1);
+  font-weight: bold;
+}
